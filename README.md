@@ -51,6 +51,16 @@ Docker automatically creates:
 
 No manual setup required!
 
+## 🔐 Default User Credentials
+
+The following test users are auto-created on first run:
+
+| Email | Password | Name |
+|-------|----------|------|
+| john@example.com | password123 | John Doe |
+| jane@example.com | password123 | Jane Smith |
+| admin@example.com | password123 | Admin User |
+
 ## 📁 Project Structure
 
 ```
