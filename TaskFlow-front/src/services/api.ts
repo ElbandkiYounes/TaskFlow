@@ -31,8 +31,10 @@ api.interceptors.request.use((config) => {
 api.interceptors.response.use(
   (response) => response,
   (error) => {
-    if (error.response?.status === 401) {
-      // Token expired or invalid
+    // Only redirect to login if 401 AND not already on login page
+    // Don't redirect for login endpoint failures (invalid credentials)
+    if (error.response?.status === 401 && !error.config.url?.includes('/auth/login')) {
+      // Token expired or invalid for authenticated requests
       localStorage.removeItem('taskflow_token');
       localStorage.removeItem('taskflow_user');
       window.location.href = '/login';

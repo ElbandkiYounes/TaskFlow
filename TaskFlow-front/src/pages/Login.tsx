@@ -38,6 +38,7 @@ export default function Login() {
       navigate(from, { replace: true });
     } catch (error) {
       // Error is handled in AuthContext with toast
+      console.error('Login error:', error);
     } finally {
       setIsLoading(false);
     }
